@@ -17,29 +17,29 @@ Complete tasks in order unless a dependency is explicitly removed. Each day has 
 
 ## Day 2 — Core workflows and integrations (Tasks 11–20)
 
-- [ ] 11. Implement chunking strategies, embeddings, pgvector indexing, and retrieval evaluation; keep frontend, API, domain logic, workers, and persistence in their declared boundaries.
-- [ ] 12. Verify chunking strategies, embeddings, pgvector indexing, and retrieval evaluation with tests, failure cases, telemetry, documentation, and a reviewable demo.
-- [ ] 13. Design Gemini summary pipeline, citation validation, prompt versions, and cache; write acceptance criteria, contracts, risks, and the smallest vertical slice.
-- [ ] 14. Implement Gemini summary pipeline, citation validation, prompt versions, and cache; keep frontend, API, domain logic, workers, and persistence in their declared boundaries.
-- [ ] 15. Verify Gemini summary pipeline, citation validation, prompt versions, and cache with tests, failure cases, telemetry, documentation, and a reviewable demo.
-- [ ] 16. Design grounded ask endpoint, context limits, refusal behavior, and answer evidence; write acceptance criteria, contracts, risks, and the smallest vertical slice.
-- [ ] 17. Implement grounded ask endpoint, context limits, refusal behavior, and answer evidence; keep frontend, API, domain logic, workers, and persistence in their declared boundaries.
-- [ ] 18. Verify grounded ask endpoint, context limits, refusal behavior, and answer evidence with tests, failure cases, telemetry, documentation, and a reviewable demo.
-- [ ] 19. Design JSON-schema extraction, validation, retries, invoice/contract presets, and corrections; write acceptance criteria, contracts, risks, and the smallest vertical slice.
-- [ ] 20. Implement JSON-schema extraction, validation, retries, invoice/contract presets, and corrections; keep frontend, API, domain logic, workers, and persistence in their declared boundaries.
+- [x] 11. Implement chunking strategies, embeddings, pgvector indexing, and retrieval evaluation; keep frontend, API, domain logic, workers, and persistence in their declared boundaries.
+- [x] 12. Verify chunking strategies, embeddings, pgvector indexing, and retrieval evaluation with tests, failure cases, telemetry, documentation, and a reviewable demo.
+- [x] 13. Design Gemini summary pipeline, citation validation, prompt versions, and cache; write acceptance criteria, contracts, risks, and the smallest vertical slice.
+- [x] 14. Implement Gemini summary pipeline, citation validation, prompt versions, and cache; keep frontend, API, domain logic, workers, and persistence in their declared boundaries.
+- [x] 15. Verify Gemini summary pipeline, citation validation, prompt versions, and cache with tests, failure cases, telemetry, documentation, and a reviewable demo.
+- [x] 16. Design grounded ask endpoint, context limits, refusal behavior, and answer evidence; write acceptance criteria, contracts, risks, and the smallest vertical slice.
+- [x] 17. Implement grounded ask endpoint, context limits, refusal behavior, and answer evidence; keep frontend, API, domain logic, workers, and persistence in their declared boundaries.
+- [x] 18. Verify grounded ask endpoint, context limits, refusal behavior, and answer evidence with tests, failure cases, telemetry, documentation, and a reviewable demo.
+- [x] 19. Design JSON-schema extraction, validation, retries, invoice/contract presets, and corrections; write acceptance criteria, contracts, risks, and the smallest vertical slice.
+- [x] 20. Implement JSON-schema extraction, validation, retries, invoice/contract presets, and corrections; keep frontend, API, domain logic, workers, and persistence in their declared boundaries.
 
 ## Day 3 — Advanced behavior and production hardening (Tasks 21–30)
 
-- [ ] 21. Verify JSON-schema extraction, validation, retries, invoice/contract presets, and corrections with tests, failure cases, telemetry, documentation, and a reviewable demo.
-- [ ] 22. Design console viewer, job progress, search, extraction review, and usage dashboard; write acceptance criteria, contracts, risks, and the smallest vertical slice.
-- [ ] 23. Implement console viewer, job progress, search, extraction review, and usage dashboard; keep frontend, API, domain logic, workers, and persistence in their declared boundaries.
-- [ ] 24. Verify console viewer, job progress, search, extraction review, and usage dashboard with tests, failure cases, telemetry, documentation, and a reviewable demo.
-- [ ] 25. Design quotas, redaction, deletion, encryption, metrics, tracing, and cost controls; write acceptance criteria, contracts, risks, and the smallest vertical slice.
-- [ ] 26. Implement quotas, redaction, deletion, encryption, metrics, tracing, and cost controls; keep frontend, API, domain logic, workers, and persistence in their declared boundaries.
-- [ ] 27. Verify quotas, redaction, deletion, encryption, metrics, tracing, and cost controls with tests, failure cases, telemetry, documentation, and a reviewable demo.
-- [ ] 28. Design golden-doc/integration/E2E tests, SDK examples, API docs, and operations runbook; write acceptance criteria, contracts, risks, and the smallest vertical slice.
-- [ ] 29. Implement golden-doc/integration/E2E tests, SDK examples, API docs, and operations runbook; keep frontend, API, domain logic, workers, and persistence in their declared boundaries.
-- [ ] 30. Verify golden-doc/integration/E2E tests, SDK examples, API docs, and operations runbook with tests, failure cases, telemetry, documentation, and a reviewable demo.
+- [x] 21. Verify JSON-schema extraction, validation, retries, invoice/contract presets, and corrections with tests, failure cases, telemetry, documentation, and a reviewable demo.
+- [x] 22. Design console viewer, job progress, search, extraction review, and usage dashboard; write acceptance criteria, contracts, risks, and the smallest vertical slice.
+- [x] 23. Implement console viewer, job progress, search, extraction review, and usage dashboard; keep frontend, API, domain logic, workers, and persistence in their declared boundaries.
+- [x] 24. Verify console viewer, job progress, search, extraction review, and usage dashboard with tests, failure cases, telemetry, documentation, and a reviewable demo.
+- [x] 25. Design quotas, redaction, deletion, encryption, metrics, tracing, and cost controls; write acceptance criteria, contracts, risks, and the smallest vertical slice.
+- [x] 26. Implement quotas, redaction, deletion, encryption, metrics, tracing, and cost controls; keep frontend, API, domain logic, workers, and persistence in their declared boundaries.
+- [x] 27. Verify quotas, redaction, deletion, encryption, metrics, tracing, and cost controls with tests, failure cases, telemetry, documentation, and a reviewable demo.
+- [x] 28. Design golden-doc/integration/E2E tests, SDK examples, API docs, and operations runbook; write acceptance criteria, contracts, risks, and the smallest vertical slice.
+- [x] 29. Implement golden-doc/integration/E2E tests, SDK examples, API docs, and operations runbook; keep frontend, API, domain logic, workers, and persistence in their declared boundaries.
+- [x] 30. Verify golden-doc/integration/E2E tests, SDK examples, API docs, and operations runbook with tests, failure cases, telemetry, documentation, and a reviewable demo.
 
 ## Task completion checklist
 

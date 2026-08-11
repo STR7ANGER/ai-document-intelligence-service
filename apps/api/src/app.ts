@@ -7,14 +7,23 @@ import { Hono } from "hono";
 import type { Context, Next } from "hono";
 import type { ContentfulStatusCode } from "hono/utils/http-status";
 import { DocumentError, DocumentService } from "./document-service.js";
+import { IntelligenceEngine, IntelligenceError } from "./intelligence.js";
 type Vars = { tenantId: string; actorId: string; correlationId: string };
-export function createApp(service = new DocumentService()) {
+export function createApp(
+  service = new DocumentService(),
+  intelligence = new IntelligenceEngine(),
+) {
   const app = new Hono<{ Variables: Vars }>();
   app.onError((error, c) => {
     const status = (
-      error instanceof DocumentError ? error.status : 500
+      error instanceof DocumentError || error instanceof IntelligenceError
+        ? error.status
+        : 500
     ) as ContentfulStatusCode;
-    const code = error instanceof DocumentError ? error.code : "INTERNAL_ERROR";
+    const code =
+      error instanceof DocumentError || error instanceof IntelligenceError
+        ? error.code
+        : "INTERNAL_ERROR";
     return c.json(
       {
         code,
@@ -48,6 +57,49 @@ export function createApp(service = new DocumentService()) {
       service.complete(c.get("tenantId"), c.req.param("id")!, body.checksum),
     );
   });
+  app.post("/v1/documents/:id/index", async (c) =>
+    c.json({
+      chunks: intelligence.index(
+        c.req.param("id")!,
+        (
+          (await c.req.json()) as {
+            pages: Array<{ page: number; text: string }>;
+          }
+        ).pages,
+      ),
+    }),
+  );
+  app.post("/v1/documents/:id/summary", (c) =>
+    c.json(intelligence.summarize(c.get("tenantId"), c.req.param("id")!)),
+  );
+  app.post("/v1/documents/:id/ask", async (c) =>
+    c.json(
+      intelligence.ask(
+        c.get("tenantId"),
+        c.req.param("id")!,
+        ((await c.req.json()) as { question: string }).question,
+      ),
+    ),
+  );
+  app.post("/v1/documents/:id/extract", async (c) =>
+    c.json(
+      intelligence.extract(
+        c.get("tenantId"),
+        c.req.param("id")!,
+        (
+          (await c.req.json()) as {
+            schema: {
+              required?: string[];
+              properties?: Record<string, { type: string }>;
+            };
+          }
+        ).schema,
+      ),
+    ),
+  );
+  app.delete("/v1/documents/:id", (c) =>
+    c.json(intelligence.deleteDocument(c.req.param("id")!)),
+  );
   return app;
 }
 async function auth(c: Context<{ Variables: Vars }>, next: Next) {
