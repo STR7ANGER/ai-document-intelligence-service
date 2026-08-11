@@ -1,0 +1,27 @@
+{
+  "name": "ai-document-intelligence-service",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "go:test": "cd services/parser && go test ./...",
+    "go:build": "cd services/parser && go build ./cmd/worker",
+    "check": "npm run format:check && npm run typecheck && npm test && npm run go:test",
+    "build": "npm run build --workspaces --if-present && npm run go:build",
+    "db:validate": "DATABASE_URL=${DATABASE_URL:-postgresql://documents:documents@localhost:5433/documents} prisma validate",
+    "db:generate": "DATABASE_URL=${DATABASE_URL:-postgresql://documents:documents@localhost:5433/documents} prisma generate"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "prisma": "^6.19.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.19.3"
+  }
+}

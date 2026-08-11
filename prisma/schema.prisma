@@ -1,0 +1,68 @@
+generator client {
+  provider = "prisma-client-js"
+}
+datasource db {
+  provider = "postgresql"
+  url = env("DATABASE_URL")
+}
+enum DocumentStatus {
+  PENDING_UPLOAD
+  UPLOADED
+  QUEUED
+  PROCESSING
+  READY
+  FAILED
+  DELETED
+}
+model Tenant {
+  id String @id @default(cuid())
+  name String
+  apiKeys ApiKey[]
+  documents Document[]
+  jobs Job[]
+}
+model ApiKey {
+  id String @id @default(cuid())
+  tenantId String
+  name String
+  keyHash String @unique
+  lastUsedAt DateTime?
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  @@index([tenantId])
+}
+model Document {
+  id String @id @default(cuid())
+  tenantId String
+  fileName String
+  mediaType String
+  bytes Int
+  checksum String
+  status DocumentStatus @default(PENDING_UPLOAD)
+  createdAt DateTime @default(now())
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  versions DocumentVersion[]
+  @@index([tenantId, status, createdAt])
+}
+model DocumentVersion {
+  id String @id @default(cuid())
+  documentId String
+  version Int
+  objectKey String
+  pageCount Int?
+  document Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  jobs Job[]
+  @@unique([documentId, version])
+}
+model Job {
+  id String @id @default(cuid())
+  tenantId String
+  versionId String
+  type String
+  status String
+  attempt Int @default(0)
+  errorCode String?
+  createdAt DateTime @default(now())
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  version DocumentVersion @relation(fields: [versionId], references: [id], onDelete: Cascade)
+  @@index([tenantId, status, createdAt])
+}
