@@ -4,16 +4,16 @@ Complete tasks in order unless a dependency is explicitly removed. Each day has 
 
 ## Day 1 — Foundation and first vertical slice (Tasks 1–10)
 
-- [ ] 1. Design workspace, storage, Docker, CI, tenancy, data policy, and job contracts; write acceptance criteria, contracts, risks, and the smallest vertical slice.
-- [ ] 2. Implement workspace, storage, Docker, CI, tenancy, data policy, and job contracts; keep frontend, API, domain logic, workers, and persistence in their declared boundaries.
-- [ ] 3. Verify workspace, storage, Docker, CI, tenancy, data policy, and job contracts with tests, failure cases, telemetry, documentation, and a reviewable demo.
-- [ ] 4. Design auth, API keys, documents, versions, signed uploads, and lifecycle states; write acceptance criteria, contracts, risks, and the smallest vertical slice.
-- [ ] 5. Implement auth, API keys, documents, versions, signed uploads, and lifecycle states; keep frontend, API, domain logic, workers, and persistence in their declared boundaries.
-- [ ] 6. Verify auth, API keys, documents, versions, signed uploads, and lifecycle states with tests, failure cases, telemetry, documentation, and a reviewable demo.
-- [ ] 7. Design Go parsing pipeline, OCR adapter, page/block model, and failure handling; write acceptance criteria, contracts, risks, and the smallest vertical slice.
-- [ ] 8. Implement Go parsing pipeline, OCR adapter, page/block model, and failure handling; keep frontend, API, domain logic, workers, and persistence in their declared boundaries.
-- [ ] 9. Verify Go parsing pipeline, OCR adapter, page/block model, and failure handling with tests, failure cases, telemetry, documentation, and a reviewable demo.
-- [ ] 10. Design chunking strategies, embeddings, pgvector indexing, and retrieval evaluation; write acceptance criteria, contracts, risks, and the smallest vertical slice.
+- [x] 1. Design workspace, storage, Docker, CI, tenancy, data policy, and job contracts; write acceptance criteria, contracts, risks, and the smallest vertical slice.
+- [x] 2. Implement workspace, storage, Docker, CI, tenancy, data policy, and job contracts; keep frontend, API, domain logic, workers, and persistence in their declared boundaries.
+- [x] 3. Verify workspace, storage, Docker, CI, tenancy, data policy, and job contracts with tests, failure cases, telemetry, documentation, and a reviewable demo.
+- [x] 4. Design auth, API keys, documents, versions, signed uploads, and lifecycle states; write acceptance criteria, contracts, risks, and the smallest vertical slice.
+- [x] 5. Implement auth, API keys, documents, versions, signed uploads, and lifecycle states; keep frontend, API, domain logic, workers, and persistence in their declared boundaries.
+- [x] 6. Verify auth, API keys, documents, versions, signed uploads, and lifecycle states with tests, failure cases, telemetry, documentation, and a reviewable demo.
+- [x] 7. Design Go parsing pipeline, OCR adapter, page/block model, and failure handling; write acceptance criteria, contracts, risks, and the smallest vertical slice.
+- [x] 8. Implement Go parsing pipeline, OCR adapter, page/block model, and failure handling; keep frontend, API, domain logic, workers, and persistence in their declared boundaries.
+- [x] 9. Verify Go parsing pipeline, OCR adapter, page/block model, and failure handling with tests, failure cases, telemetry, documentation, and a reviewable demo.
+- [x] 10. Design chunking strategies, embeddings, pgvector indexing, and retrieval evaluation; write acceptance criteria, contracts, risks, and the smallest vertical slice.
 
 ## Day 2 — Core workflows and integrations (Tasks 11–20)
 
@@ -44,4 +44,3 @@ Complete tasks in order unless a dependency is explicitly removed. Each day has 
 ## Task completion checklist
 
 A task is complete only when code is formatted and typed, tests pass, migrations are reproducible, UI states are handled, authorization is enforced, logs contain no secrets, and relevant docs are updated. Track blockers beneath the task instead of silently widening scope.
-
