@@ -1,0 +1,27 @@
+openapi: 3.1.0
+info: { title: AI Document Intelligence API, version: 1.0.0 }
+paths:
+  /v1/documents:
+    {
+      post:
+        {
+          summary: Create signed upload,
+          responses: { "201": { description: Created } },
+        },
+    }
+  /v1/documents/{id}/ask:
+    {
+      post:
+        {
+          summary: Grounded question answering,
+          responses: { "200": { description: Answer with citations } },
+        },
+    }
+  /v1/documents/{id}/extract:
+    {
+      post:
+        {
+          summary: JSON-schema extraction,
+          responses: { "200": { description: Validated extraction } },
+        },
+    }
